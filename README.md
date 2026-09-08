@@ -46,7 +46,6 @@ pnpm test
 pnpm test:coverage
 pnpm test:e2e
 pnpm test:a11y
-pnpm lighthouse
 pnpm sanity:typegen
 pnpm sanity:seed
 pnpm validate
