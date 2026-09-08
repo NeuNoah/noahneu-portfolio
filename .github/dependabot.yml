@@ -3,9 +3,14 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: monthly
+      interval: weekly
+      day: monday
+      time: "04:00"
     open-pull-requests-limit: 5
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: monthly
+      interval: weekly
+      day: monday
+      time: "04:30"
+    open-pull-requests-limit: 5

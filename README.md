@@ -60,12 +60,16 @@ Die E-Mail wird im Browser aus getrennten Teilen zusammengesetzt. Diese einfache
 
 ## Deployment auf Vercel
 
-1. Repository bei GitHub anlegen und dieses Projekt pushen.
-2. Repository in Vercel importieren.
-3. Die Werte aus `.env.example` in den Vercel-Projekteinstellungen setzen. Ein Write-Token wird nur für lokale Seeds benötigt.
-4. Vorschau-Deployment öffnen und deutsche/englische Routen, Theme-Umschalter, E-Mail-Aktionen und mobile Navigation prüfen.
-5. Für `noahneu.dev` die Domain in Vercel hinterlegen, die von Vercel angezeigten DNS-Einträge beim Domainanbieter setzen, HTTPS abwarten und `NEXT_PUBLIC_SITE_URL=https://noahneu.dev` aktualisieren.
-6. Sitemap, Canonical URLs und Open-Graph-Daten nach dem ersten echten Deployment prüfen.
+Das Repository ist mit Vercel verbunden. Jeder Push auf `main` löst nach den GitHub-Qualitätsprüfungen automatisch ein Vercel-Deployment aus.
+
+1. Die Werte aus `.env.example` in den Vercel-Projekteinstellungen setzen. Ein Write-Token wird nur für lokale Seeds benötigt.
+2. Vorschau-Deployment öffnen und deutsche/englische Routen, Theme-Umschalter, E-Mail-Aktionen und mobile Navigation prüfen.
+3. Für `noahneu.dev` die Domain in Vercel hinterlegen, die von Vercel angezeigten DNS-Einträge beim Domainanbieter setzen, HTTPS abwarten und `NEXT_PUBLIC_SITE_URL=https://noahneu.dev` aktualisieren.
+4. Sitemap, Canonical URLs und Open-Graph-Daten nach dem ersten echten Deployment prüfen.
+
+## GitHub-Workflow
+
+Pull Requests nach `main` führen automatisch Formatprüfung, ESLint, TypeScript, Tests und den Produktions-Build aus. Die Workflow-Datei verwendet Node.js 24, minimale Leserechte und bricht veraltete parallele Läufe ab. Dependabot prüft npm- und GitHub-Actions-Abhängigkeiten wöchentlich.
 
 ## Offene Punkte
 
