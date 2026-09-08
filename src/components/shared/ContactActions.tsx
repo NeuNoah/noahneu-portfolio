@@ -12,7 +12,32 @@ export function ContactActions({ writeLabel, copyLabel, copiedLabel }: { writeLa
     () => false,
   );
   async function copyEmail() {
-    await navigator.clipboard.writeText(reconstructEmail());
+    const email = reconstructEmail();
+
+    try {
+      if (!navigator.clipboard?.writeText) {
+        throw new Error("Clipboard API unavailable");
+      }
+      await navigator.clipboard.writeText(email);
+    } catch {
+      // Some browsers block the async Clipboard API until the user grants
+      // permission. Keep the button useful with a short-lived text fallback.
+      const textarea = document.createElement("textarea");
+      textarea.value = email;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+
+      const copied = document.execCommand("copy");
+      textarea.remove();
+
+      if (!copied) {
+        return;
+      }
+    }
+
     setCopied(true);
     window.setTimeout(() => setCopied(false), 2200);
   }
