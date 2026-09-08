@@ -1,5 +1,8 @@
 # Noah Neu · Portfolio
 
+[![Quality checks](https://github.com/NeuNoah/noahneu-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/NeuNoah/noahneu-portfolio/actions/workflows/ci.yml)
+[![Live website](https://img.shields.io/badge/live-noahneu--portfolio.vercel.app-111111?logo=vercel&logoColor=white)](https://noahneu-portfolio.vercel.app)
+
 Eine ruhige, monochrome und zweisprachige Portfolio-Website für Noah Neu. Sie unterstützt die Suche nach einer Ausbildung zum Fachinformatiker ab dem 1. August 2027 und zeigt erste IT-Praxis, Lernfelder und das Rust-Browserprojekt ehrlich.
 
 ## Verwendeter Stand
@@ -12,7 +15,7 @@ Eine ruhige, monochrome und zweisprachige Portfolio-Website für Noah Neu. Sie u
 - Tailwind CSS 4.3.3
 - Sanity 6.12.0 und next-sanity 13.3.4 (Studio vorbereitet)
 - next-intl 4.14.2, next-themes 0.4.6, Lucide React 0.468.0
-- Vitest 3.2.4, React Testing Library, Playwright 1.57.0 und axe-core
+- Vitest 3.2.6, React Testing Library, Playwright 1.57.0 und axe-core
 
 ## Lokal starten
 
@@ -68,7 +71,9 @@ Das Repository ist mit Vercel verbunden. Jeder Push auf `main` löst nach den Gi
 
 ## GitHub-Workflow
 
-Pull Requests nach `main` führen automatisch Formatprüfung, ESLint, TypeScript, Tests und den Produktions-Build aus. Die Workflow-Datei verwendet Node.js 24, minimale Leserechte und bricht veraltete parallele Läufe ab. Dependabot prüft npm- und GitHub-Actions-Abhängigkeiten wöchentlich.
+Pull Requests nach `main` führen automatisch Formatprüfung, ESLint, TypeScript, Tests und den Produktions-Build aus. Die Workflow-Datei verwendet Node.js 24, minimale Leserechte, immutable Action-Versionen und bricht veraltete parallele Läufe ab. CodeQL und Dependency Review ergänzen die Sicherheitsprüfungen. Dependabot prüft npm- und GitHub-Actions-Abhängigkeiten wöchentlich.
+
+Der `main`-Branch ist geschützt: Änderungen laufen über Pull Requests, müssen `validate` bestehen und dürfen weder per Force-Push überschrieben noch gelöscht werden. Sicherheitsmeldungen stehen in [SECURITY.md](SECURITY.md).
 
 ## Offene Punkte
 
@@ -90,5 +95,5 @@ Pull Requests nach `main` führen automatisch Formatprüfung, ESLint, TypeScript
 - [ ] Datenschutzerklärung vervollständigen und prüfen
 - [ ] E-Mail-Verschleierung testen
 - [ ] Mobile Darstellung testen
-- [ ] Lighthouse nach Deployment ausführen
+- [ ] Performance-Check nach Deployment ausführen
 - [ ] Alle öffentlichen Inhalte auf private Angaben prüfen
