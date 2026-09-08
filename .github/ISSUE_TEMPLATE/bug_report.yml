@@ -1,0 +1,36 @@
+name: Fehler melden
+description: Einen reproduzierbaren Fehler im Portfolio melden.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke für den Report. Bitte keine Zugangsdaten oder privaten Daten einfügen.
+  - type: input
+    id: url
+    attributes:
+      label: Betroffene URL
+      placeholder: https://noahneu-portfolio.vercel.app/...
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Schritte zur Reproduktion
+      description: Was muss man tun, um den Fehler zu sehen?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Erwartetes Verhalten
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Tatsächliches Verhalten
+    validations:
+      required: true
