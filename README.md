@@ -73,7 +73,7 @@ Das Repository ist mit Vercel verbunden. Jeder Push auf `main` löst nach den Gi
 
 Pull Requests nach `main` führen automatisch Formatprüfung, ESLint, TypeScript, Tests und den Produktions-Build aus. Die Workflow-Datei verwendet Node.js 24, minimale Leserechte, immutable Action-Versionen und bricht veraltete parallele Läufe ab. CodeQL und Dependency Review ergänzen die Sicherheitsprüfungen. Dependabot prüft npm- und GitHub-Actions-Abhängigkeiten wöchentlich.
 
-Der `main`-Branch ist geschützt: Änderungen laufen über Pull Requests, müssen `validate` bestehen und dürfen weder per Force-Push überschrieben noch gelöscht werden. Sicherheitsmeldungen stehen in [SECURITY.md](SECURITY.md).
+Der `main`-Branch ist geschützt: Änderungen laufen über Pull Requests, müssen `validate` bestehen und dürfen weder per Force-Push überschrieben noch gelöscht werden. CodeQL läuft bei Pull Requests und wöchentlich. Sicherheitsmeldungen stehen in [SECURITY.md](SECURITY.md).
 
 ## Offene Punkte
 
